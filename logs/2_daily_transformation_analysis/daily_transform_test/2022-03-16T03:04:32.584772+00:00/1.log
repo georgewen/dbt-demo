@@ -1,0 +1,41 @@
+[2022-03-16 03:04:54,360] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: 2_daily_transformation_analysis.daily_transform_test manual__2022-03-16T03:04:32.584772+00:00 [queued]>
+[2022-03-16 03:04:54,371] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: 2_daily_transformation_analysis.daily_transform_test manual__2022-03-16T03:04:32.584772+00:00 [queued]>
+[2022-03-16 03:04:54,371] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-16 03:04:54,372] {taskinstance.py:1244} INFO - Starting attempt 1 of 1
+[2022-03-16 03:04:54,373] {taskinstance.py:1245} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-16 03:04:54,384] {taskinstance.py:1264} INFO - Executing <Task(BashOperator): daily_transform_test> on 2022-03-16 03:04:32.584772+00:00
+[2022-03-16 03:04:54,389] {standard_task_runner.py:52} INFO - Started process 2227 to run task
+[2022-03-16 03:04:54,394] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', '2_daily_transformation_analysis', 'daily_transform_test', 'manual__2022-03-16T03:04:32.584772+00:00', '--job-id', '53', '--raw', '--subdir', 'DAGS_FOLDER/transform_and_analysis.py', '--cfg-path', '/tmp/tmp2iciknl4', '--error-file', '/tmp/tmpdr4ntut5']
+[2022-03-16 03:04:54,395] {standard_task_runner.py:77} INFO - Job 53: Subtask daily_transform_test
+[2022-03-16 03:04:54,456] {logging_mixin.py:109} INFO - Running <TaskInstance: 2_daily_transformation_analysis.daily_transform_test manual__2022-03-16T03:04:32.584772+00:00 [running]> on host b1edfeccb8dc
+[2022-03-16 03:04:54,546] {taskinstance.py:1431} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=2_daily_transformation_analysis
+AIRFLOW_CTX_TASK_ID=daily_transform_test
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-16T03:04:32.584772+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-03-16T03:04:32.584772+00:00
+[2022-03-16 03:04:54,547] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-03-16 03:04:54,549] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'cd /dbt && dbt test --profiles-dir .']
+[2022-03-16 03:04:54,559] {subprocess.py:85} INFO - Output:
+[2022-03-16 03:04:58,106] {subprocess.py:89} INFO - 03:04:58  Running with dbt=1.0.0
+[2022-03-16 03:04:58,400] {subprocess.py:89} INFO - 03:04:58  Found 5 models, 2 tests, 0 snapshots, 0 analyses, 581 macros, 0 operations, 3 seed files, 0 sources, 0 exposures, 0 metrics
+[2022-03-16 03:04:58,403] {subprocess.py:89} INFO - 03:04:58
+[2022-03-16 03:04:59,733] {subprocess.py:89} INFO - 03:04:59  Concurrency: 200 threads (target='dev')
+[2022-03-16 03:04:59,735] {subprocess.py:89} INFO - 03:04:59
+[2022-03-16 03:04:59,787] {subprocess.py:89} INFO - 03:04:59  1 of 2 START test not_null_customers_ID......................................... [RUN]
+[2022-03-16 03:04:59,788] {subprocess.py:89} INFO - 03:04:59  2 of 2 START test unique_customers_ID........................................... [RUN]
+[2022-03-16 03:05:00,312] {subprocess.py:89} INFO - 03:05:00  2 of 2 PASS unique_customers_ID................................................. [PASS in 0.52s]
+[2022-03-16 03:05:00,314] {subprocess.py:89} INFO - 03:05:00  1 of 2 PASS not_null_customers_ID............................................... [PASS in 0.52s]
+[2022-03-16 03:05:00,414] {subprocess.py:89} INFO - 03:05:00
+[2022-03-16 03:05:00,416] {subprocess.py:89} INFO - 03:05:00  Finished running 2 tests in 2.01s.
+[2022-03-16 03:05:00,444] {subprocess.py:89} INFO - 03:05:00
+[2022-03-16 03:05:00,445] {subprocess.py:89} INFO - 03:05:00  Completed successfully
+[2022-03-16 03:05:00,447] {subprocess.py:89} INFO - 03:05:00
+[2022-03-16 03:05:00,449] {subprocess.py:89} INFO - 03:05:00  Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[2022-03-16 03:05:01,767] {subprocess.py:93} INFO - Command exited with return code 0
+[2022-03-16 03:05:01,798] {taskinstance.py:1282} INFO - Marking task as SUCCESS. dag_id=2_daily_transformation_analysis, task_id=daily_transform_test, execution_date=20220316T030432, start_date=20220316T030454, end_date=20220316T030501
+[2022-03-16 03:05:01,850] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-03-16 03:05:01,878] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

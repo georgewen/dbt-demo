@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: customers
+    description: One record per customer
+    columns:
+      - name: ID
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: birthdate
+        description: birthdate, to add test using dbt_utils and dbt_expectations

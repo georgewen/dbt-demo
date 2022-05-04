@@ -1,0 +1,175 @@
+[2022-03-13 22:08:35,023] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: 2_daily_transformation_analysis.daily_transform scheduled__2020-08-01T00:00:00+00:00 [queued]>
+[2022-03-13 22:08:35,037] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: 2_daily_transformation_analysis.daily_transform scheduled__2020-08-01T00:00:00+00:00 [queued]>
+[2022-03-13 22:08:35,038] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-13 22:08:35,038] {taskinstance.py:1244} INFO - Starting attempt 1 of 1
+[2022-03-13 22:08:35,038] {taskinstance.py:1245} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-13 22:08:35,058] {taskinstance.py:1264} INFO - Executing <Task(BashOperator): daily_transform> on 2020-08-01 00:00:00+00:00
+[2022-03-13 22:08:35,063] {standard_task_runner.py:52} INFO - Started process 392 to run task
+[2022-03-13 22:08:35,066] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', '2_daily_transformation_analysis', 'daily_transform', 'scheduled__2020-08-01T00:00:00+00:00', '--job-id', '44', '--raw', '--subdir', 'DAGS_FOLDER/transform_and_analysis.py', '--cfg-path', '/tmp/tmph4gkx_xl', '--error-file', '/tmp/tmphhx8cemn']
+[2022-03-13 22:08:35,066] {standard_task_runner.py:77} INFO - Job 44: Subtask daily_transform
+[2022-03-13 22:08:35,123] {logging_mixin.py:109} INFO - Running <TaskInstance: 2_daily_transformation_analysis.daily_transform scheduled__2020-08-01T00:00:00+00:00 [running]> on host e176062f3fa2
+[2022-03-13 22:08:35,245] {taskinstance.py:1431} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=2_daily_transformation_analysis
+AIRFLOW_CTX_TASK_ID=daily_transform
+AIRFLOW_CTX_EXECUTION_DATE=2020-08-01T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2020-08-01T00:00:00+00:00
+[2022-03-13 22:08:35,245] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-03-13 22:08:35,246] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'cd /dbt && dbt run --models transform --profiles-dir .']
+[2022-03-13 22:08:35,258] {subprocess.py:85} INFO - Output:
+[2022-03-13 22:08:38,215] {subprocess.py:89} INFO - Running with dbt=0.20.0
+[2022-03-13 22:08:41,062] {subprocess.py:89} INFO - Found 5 models, 0 tests, 0 snapshots, 0 analyses, 338 macros, 0 operations, 3 seed files, 0 sources, 0 exposures
+[2022-03-13 22:08:41,063] {subprocess.py:89} INFO - 
+[2022-03-13 22:08:42,961] {subprocess.py:89} INFO - 22:08:42 | Concurrency: 200 threads (target='dev')
+[2022-03-13 22:08:42,961] {subprocess.py:89} INFO - 22:08:42 |
+[2022-03-13 22:08:43,024] {subprocess.py:89} INFO - 22:08:43 | 1 of 3 START view model transform.combined_bookings.................. [RUN]
+[2022-03-13 22:08:43,024] {subprocess.py:89} INFO - 22:08:43 | 2 of 3 START view model transform.customer........................... [RUN]
+[2022-03-13 22:08:44,138] {subprocess.py:89} INFO - 22:08:44 | 2 of 3 OK created view model transform.customer...................... [[32mSUCCESS 1[0m in 1.11s]
+[2022-03-13 22:08:44,269] {subprocess.py:89} INFO - 22:08:44 | 1 of 3 OK created view model transform.combined_bookings............. [[32mSUCCESS 1[0m in 1.24s]
+[2022-03-13 22:08:44,271] {subprocess.py:89} INFO - 22:08:44 | 3 of 3 START view model transform.prepped_data....................... [RUN]
+[2022-03-13 22:08:45,235] {subprocess.py:89} INFO - 22:08:45 | 3 of 3 OK created view model transform.prepped_data.................. [[32mSUCCESS 1[0m in 0.96s]
+[2022-03-13 22:08:45,835] {subprocess.py:89} INFO - 22:08:45 |
+[2022-03-13 22:08:45,835] {subprocess.py:89} INFO - 22:08:45 | Finished running 3 view models in 4.77s.
+[2022-03-13 22:08:45,844] {subprocess.py:89} INFO - 
+[2022-03-13 22:08:45,844] {subprocess.py:89} INFO - [32mCompleted successfully[0m
+[2022-03-13 22:08:45,845] {subprocess.py:89} INFO - 
+[2022-03-13 22:08:45,845] {subprocess.py:89} INFO - Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[2022-03-13 22:08:47,060] {subprocess.py:93} INFO - Command exited with return code 0
+[2022-03-13 22:08:47,087] {taskinstance.py:1282} INFO - Marking task as SUCCESS. dag_id=2_daily_transformation_analysis, task_id=daily_transform, execution_date=20200801T000000, start_date=20220313T220835, end_date=20220313T220847
+[2022-03-13 22:08:47,114] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-03-13 22:08:47,145] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-03-14 00:19:20,113] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: 2_daily_transformation_analysis.daily_transform scheduled__2020-08-01T00:00:00+00:00 [queued]>
+[2022-03-14 00:19:20,126] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: 2_daily_transformation_analysis.daily_transform scheduled__2020-08-01T00:00:00+00:00 [queued]>
+[2022-03-14 00:19:20,127] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-14 00:19:20,128] {taskinstance.py:1244} INFO - Starting attempt 1 of 1
+[2022-03-14 00:19:20,129] {taskinstance.py:1245} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-14 00:19:20,142] {taskinstance.py:1264} INFO - Executing <Task(BashOperator): daily_transform> on 2020-08-01 00:00:00+00:00
+[2022-03-14 00:19:20,148] {standard_task_runner.py:52} INFO - Started process 446 to run task
+[2022-03-14 00:19:20,153] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', '2_daily_transformation_analysis', 'daily_transform', 'scheduled__2020-08-01T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/transform_and_analysis.py', '--cfg-path', '/tmp/tmp4rj43wj6', '--error-file', '/tmp/tmpmkgo4kiu']
+[2022-03-14 00:19:20,155] {standard_task_runner.py:77} INFO - Job 7: Subtask daily_transform
+[2022-03-14 00:19:20,226] {logging_mixin.py:109} INFO - Running <TaskInstance: 2_daily_transformation_analysis.daily_transform scheduled__2020-08-01T00:00:00+00:00 [running]> on host 1910aafd392e
+[2022-03-14 00:19:20,344] {taskinstance.py:1431} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=2_daily_transformation_analysis
+AIRFLOW_CTX_TASK_ID=daily_transform
+AIRFLOW_CTX_EXECUTION_DATE=2020-08-01T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2020-08-01T00:00:00+00:00
+[2022-03-14 00:19:20,347] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-03-14 00:19:20,349] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'cd /dbt && dbt run --models transform --profiles-dir .']
+[2022-03-14 00:19:20,362] {subprocess.py:85} INFO - Output:
+[2022-03-14 00:19:23,000] {subprocess.py:89} INFO - Running with dbt=0.20.0
+[2022-03-14 00:19:26,204] {subprocess.py:89} INFO - Found 5 models, 0 tests, 0 snapshots, 0 analyses, 338 macros, 0 operations, 3 seed files, 0 sources, 0 exposures
+[2022-03-14 00:19:26,206] {subprocess.py:89} INFO - 
+[2022-03-14 00:19:28,108] {subprocess.py:89} INFO - 00:19:28 | Concurrency: 200 threads (target='dev')
+[2022-03-14 00:19:28,109] {subprocess.py:89} INFO - 00:19:28 |
+[2022-03-14 00:19:28,152] {subprocess.py:89} INFO - 00:19:28 | 1 of 3 START view model transform.combined_bookings.................. [RUN]
+[2022-03-14 00:19:28,153] {subprocess.py:89} INFO - 00:19:28 | 2 of 3 START view model transform.customer........................... [RUN]
+[2022-03-14 00:19:29,411] {subprocess.py:89} INFO - 00:19:29 | 2 of 3 OK created view model transform.customer...................... [[32mSUCCESS 1[0m in 1.25s]
+[2022-03-14 00:19:29,557] {subprocess.py:89} INFO - 00:19:29 | 1 of 3 OK created view model transform.combined_bookings............. [[32mSUCCESS 1[0m in 1.40s]
+[2022-03-14 00:19:29,561] {subprocess.py:89} INFO - 00:19:29 | 3 of 3 START view model transform.prepped_data....................... [RUN]
+[2022-03-14 00:19:30,520] {subprocess.py:89} INFO - 00:19:30 | 3 of 3 OK created view model transform.prepped_data.................. [[32mSUCCESS 1[0m in 0.95s]
+[2022-03-14 00:19:31,302] {subprocess.py:89} INFO - 00:19:31 |
+[2022-03-14 00:19:31,303] {subprocess.py:89} INFO - 00:19:31 | Finished running 3 view models in 5.09s.
+[2022-03-14 00:19:31,328] {subprocess.py:89} INFO - 
+[2022-03-14 00:19:31,330] {subprocess.py:89} INFO - [32mCompleted successfully[0m
+[2022-03-14 00:19:31,331] {subprocess.py:89} INFO - 
+[2022-03-14 00:19:31,331] {subprocess.py:89} INFO - Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[2022-03-14 00:19:32,635] {subprocess.py:93} INFO - Command exited with return code 0
+[2022-03-14 00:19:32,669] {taskinstance.py:1282} INFO - Marking task as SUCCESS. dag_id=2_daily_transformation_analysis, task_id=daily_transform, execution_date=20200801T000000, start_date=20220314T001920, end_date=20220314T001932
+[2022-03-14 00:19:32,696] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-03-14 00:19:32,737] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-03-16 00:08:47,907] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: 2_daily_transformation_analysis.daily_transform scheduled__2020-08-01T00:00:00+00:00 [queued]>
+[2022-03-16 00:08:47,927] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: 2_daily_transformation_analysis.daily_transform scheduled__2020-08-01T00:00:00+00:00 [queued]>
+[2022-03-16 00:08:47,928] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-16 00:08:47,930] {taskinstance.py:1244} INFO - Starting attempt 1 of 1
+[2022-03-16 00:08:47,931] {taskinstance.py:1245} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-16 00:08:47,952] {taskinstance.py:1264} INFO - Executing <Task(BashOperator): daily_transform> on 2020-08-01 00:00:00+00:00
+[2022-03-16 00:08:47,959] {standard_task_runner.py:52} INFO - Started process 177 to run task
+[2022-03-16 00:08:47,966] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', '2_daily_transformation_analysis', 'daily_transform', 'scheduled__2020-08-01T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/transform_and_analysis.py', '--cfg-path', '/tmp/tmpr14n9ehy', '--error-file', '/tmp/tmpw5v37nfj']
+[2022-03-16 00:08:47,968] {standard_task_runner.py:77} INFO - Job 5: Subtask daily_transform
+[2022-03-16 00:08:48,061] {logging_mixin.py:109} INFO - Running <TaskInstance: 2_daily_transformation_analysis.daily_transform scheduled__2020-08-01T00:00:00+00:00 [running]> on host 110616af387e
+[2022-03-16 00:08:48,126] {taskinstance.py:1718} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1334, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1423, in _execute_task_with_callbacks
+    self.render_templates(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 2011, in render_templates
+    self.task.render_template_fields(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 1061, in render_template_fields
+    self._do_render_template_fields(self, self.template_fields, context, jinja_env, set())
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 1074, in _do_render_template_fields
+    rendered_content = self.render_template(content, context, jinja_env, seen_oids)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 1131, in render_template
+    return {key: self.render_template(value, context, jinja_env) for key, value in content.items()}
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 1131, in <dictcomp>
+    return {key: self.render_template(value, context, jinja_env) for key, value in content.items()}
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 1113, in render_template
+    return render_template_to_string(template, context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/helpers.py", line 268, in render_template_to_string
+    return render_template(template, context, native=False)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/helpers.py", line 263, in render_template
+    return "".join(nodes)
+  File "<template>", line 12, in root
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/sandbox.py", line 407, in getattr
+    value = getattr(obj, attribute)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/context.py", line 54, in __getattr__
+    self.var = Variable.get(key, deserialize_json=self._deserialize_json)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/variable.py", line 140, in get
+    raise KeyError(f'Variable {key} does not exist')
+KeyError: 'Variable dbt_user does not exist'
+[2022-03-16 00:08:48,151] {taskinstance.py:1282} INFO - Marking task as FAILED. dag_id=2_daily_transformation_analysis, task_id=daily_transform, execution_date=20200801T000000, start_date=20220316T000847, end_date=20220316T000848
+[2022-03-16 00:08:48,175] {standard_task_runner.py:92} ERROR - Failed to execute job 5 for task daily_transform
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/task/task_runner/standard_task_runner.py", line 85, in _start_by_fork
+    args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 298, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 107, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 184, in _run_raw_task
+    error_file=args.error_file,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1334, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1423, in _execute_task_with_callbacks
+    self.render_templates(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 2011, in render_templates
+    self.task.render_template_fields(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 1061, in render_template_fields
+    self._do_render_template_fields(self, self.template_fields, context, jinja_env, set())
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 1074, in _do_render_template_fields
+    rendered_content = self.render_template(content, context, jinja_env, seen_oids)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 1131, in render_template
+    return {key: self.render_template(value, context, jinja_env) for key, value in content.items()}
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 1131, in <dictcomp>
+    return {key: self.render_template(value, context, jinja_env) for key, value in content.items()}
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 1113, in render_template
+    return render_template_to_string(template, context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/helpers.py", line 268, in render_template_to_string
+    return render_template(template, context, native=False)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/helpers.py", line 263, in render_template
+    return "".join(nodes)
+  File "<template>", line 12, in root
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/sandbox.py", line 407, in getattr
+    value = getattr(obj, attribute)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/context.py", line 54, in __getattr__
+    self.var = Variable.get(key, deserialize_json=self._deserialize_json)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/variable.py", line 140, in get
+    raise KeyError(f'Variable {key} does not exist')
+KeyError: 'Variable dbt_user does not exist'
+[2022-03-16 00:08:48,221] {local_task_job.py:154} INFO - Task exited with return code 1
+[2022-03-16 00:08:48,295] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check
